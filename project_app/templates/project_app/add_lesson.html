@@ -1,0 +1,44 @@
+{% extends 'project_app/base.html' %}
+{% load static %}
+
+
+{% block screen %}
+<section class="hero-wrap js-fullheight" style="background-image: url('/static/project_app/images/bg_3.jpg')" >
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center">
+          <div class="col-md-9 ftco-animate text-center">
+            <h1 class="mb-3 bread">Предложения</h1>
+            <p class="breadcrumbs"><span class="mr-2"><a href="{% url 'based_home' %}">Home</a></span> <span>Contact</span></p>
+          </div>
+        </div>
+      </div>
+    </section>
+{% endblock %}
+
+{% block information %}
+<section class="ftco-section contact-section">
+      <div class="container">
+        <div class="row block-9">
+					<div class="col-md-4 contact-info ftco-animate bg-light p-4">
+						<div class="row">
+							<div class="col-md-12 mb-4">
+	              <h2 class="h4">Form</h2>
+	            </div>
+	          <form method="post" enctype="multipart/form-data">
+                  {% csrf_token %}
+                  {{ my_form.as_p }}
+                  <button class="btn btn-primary my-4" type="submit">Submit</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+{% endblock %}
+
+
+
+
+
+

@@ -1,0 +1,150 @@
+{% extends 'project_app/base.html' %}
+
+{% block screen %}
+<section class="hero-wrap js-fullheight" style="background-image: url('/static/project_app/images/bg_3.jpg')">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center">
+          <div class="col-md-9 ftco-animate text-center">
+            <h1 class="mb-3 bread">Dance Directions</h1>
+            <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home</a></span> <span>Directions</span></p>
+          </div>
+        </div>
+      </div>
+    </section>
+	<section class="ftco-section ftco-intro" style="background-image: url('/static/project_app/images/intro.jpg')">
+			<div class="container">
+				<div class="row justify-content-end">
+					<div class="col-md-6">
+
+	          <p class="ftco-animate"></p>
+	          <ul class="mt-5 do-list">
+				{% for el in data %}
+              <li class="ftco-animate"><a href="{% url 'based_description' el.id %}"><span class="ion-ios-checkmark-circle mr-3">   {{el.name_dance}} </span></a></li>
+				  <li class="ftco-animate"><a href="{% url 'add_to_list' el.id %}">watch later....</a></li>
+              {% endfor %}
+	          </ul>
+					</div>
+				</div>
+			</div>
+		</section>
+
+{% endblock %}
+
+{% block directions %}
+ <section class="ftco-section">
+	  	<div class="container">
+	  		<div class="row justify-content-center mb-5 pb-3">
+          <div class="col-md-12 heading-section ftco-animate text-center">
+            <h3 class="subheading">Dance directions</h3>
+            <h2 class="mb-1">Choose your direction of dance</h2>
+          </div>
+        </div>
+        <div class="row no-gutters">
+        	<div class="col-md-6 col-lg-4">
+        		<div class="package-program ftco-animate">
+        			<a href="#" class="img d-flex justify-content-center align-items-center" style="background-image: url('/static/project_app/images/program-1.jpg')">
+        				<div class="text p-5 text-center">
+	        				<h3>Eastern dance</h3>
+	        				<p>Описание</p>
+	        			</div>
+        			</a>
+        		</div>
+        	</div>
+        	<div class="col-md-6 col-lg-4">
+        		<div class="package-program ftco-animate">
+        			<a href="#" class="img d-flex justify-content-center align-items-center" style="background-image: url('/static/project_app/images/program-2.jpg')">
+        				<div class="text p-5 text-center">
+	        				<h3>Argentine tango</h3>
+	        				<p>Описание</p>
+	        			</div>
+        			</a>
+        		</div>
+        	</div>
+        	<div class="col-md-6 col-lg-4">
+        		<div class="package-program ftco-animate">
+        			<a href="#" class="img d-flex justify-content-center align-items-center" style="background-image: url('/static/project_app/images/program-3.jpg')">
+        				<div class="text p-5 text-center">
+	        				<h3>Salsa</h3>
+	        				<p>Описание</p>
+	        			</div>
+        			</a>
+        		</div>
+        	</div>
+        	<div class="col-md-6 col-lg-4">
+        		<div class="package-program ftco-animate">
+        			<a href="#" class="img d-flex justify-content-center align-items-center" style="background-image: url('/static/project_app/images/program-4.jpg')">
+        				<div class="text p-5 text-center">
+	        				<h3>Ballroom dancing</h3>
+	        				<p>Описание</p>
+	        			</div>
+        			</a>
+        		</div>
+        	</div>
+        	<div class="col-md-6 col-lg-4">
+        		<div class="package-program ftco-animate">
+        			<a href="#" class="img d-flex justify-content-center align-items-center" style="background-image: url('/static/project_app/images/program-5.jpg')">
+        				<div class="text p-5 text-center">
+	        				<h3>Modern dances</h3>
+	        				<p>Описание</p>
+	        			</div>
+        			</a>
+        		</div>
+        	</div>
+        	<div class="col-md-6 col-lg-4">
+        		<div class="package-program ftco-animate">
+        			<a href="#" class="img d-flex justify-content-center align-items-center" style="background-image: url('/static/project_app/images/program-6.jpg')">
+        				<div class="text p-5 text-center">
+	        				<h3>Indian dances</h3>
+	        				<p>Описание</p>
+	        			</div>
+        			</a>
+        		</div>
+        	</div>
+        </div>
+	  	</div>
+	  </section>
+{% endblock %}
+
+{% block gallery %}
+<section class="ftco-gallery ftco-section">
+    	<div class="container">
+    		<div class="row justify-content-center mb-5 pb-3">
+          <div class="col-md-7 heading-section ftco-animate text-center">
+            <h3 class="subheading">Gallery</h3>
+            <h2 class="mb-1">See the latest photos</h2>
+          </div>
+        </div>
+    		<div class="row">
+					<div class="col-md-3 ftco-animate">
+						<a href="images/gallery-1.jpg" class="gallery image-popup img d-flex align-items-center" style="background-image: url('/static/project_app/images/gallery-1.jpg')">
+							<div class="icon mb-4 d-flex align-items-center justify-content-center">
+    						<span class="icon-instagram"></span>
+    					</div>
+						</a>
+					</div>
+					<div class="col-md-3 ftco-animate">
+						<a href="images/gallery-2.jpg" class="gallery image-popup img d-flex align-items-center" style="background-image: url('/static/project_app/images/gallery-2.jpg')">
+							<div class="icon mb-4 d-flex align-items-center justify-content-center">
+    						<span class="icon-instagram"></span>
+    					</div>
+						</a>
+					</div>
+					<div class="col-md-3 ftco-animate">
+						<a href="images/gallery-3.jpg" class="gallery image-popup img d-flex align-items-center" style="background-image: url('/static/project_app/images/gallery-3.jpg')">
+							<div class="icon mb-4 d-flex align-items-center justify-content-center">
+    						<span class="icon-instagram"></span>
+    					</div>
+						</a>
+					</div>
+					<div class="col-md-3 ftco-animate">
+						<a href="images/gallery-4.jpg" class="gallery image-popup img d-flex align-items-center" style="background-image: url('/static/project_app/images/gallery-4.jpg')">
+							<div class="icon mb-4 d-flex align-items-center justify-content-center">
+    						<span class="icon-instagram"></span>
+    					</div>
+						</a>
+					</div>
+        </div>
+    	</div>
+    </section>
+{% endblock %}

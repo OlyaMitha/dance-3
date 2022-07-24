@@ -1,0 +1,40 @@
+{% extends 'project_app/base.html' %}
+{% load static %}
+
+{% block Stories %}
+<section class="ftco-section testimony-section">
+      <div class="container">
+        <div class="row justify-content-center mb-5 pb-3">
+          <div class="col-md-7 heading-section ftco-animate text-center">
+            <h3 class="subheading">
+                	</h3>
+            <h2 class="mb-1">Заказы</h2>
+          </div>
+        </div>
+			  {% for lst in current %}
+                {{ lst.direction.name_dance }}--{{ lst.count }}
+              <li class="ftco-animate"><a href="{% url 'add_to_list' lst.direction.id %}">add to</a></li>
+                <li class="ftco-animate"><a href="{% url 'delete_from_list' lst.direction.id %}">Delete from</a></li>
+                <li class="ftco-animate"><a href="{% url 'drop_from_list' lst.direction.id %}">Drop from</a></li>
+
+              {% endfor %}
+              <p><a href="{% url 'do_list' %}">Got it!</a></p>
+              <p> Latest Acquired Destinations</p>
+                  {% for lst in data %}
+                    <div class="container">
+                     <li class="ftco-animate"><a href = "{% url 'get_past_list' lst.order %}">Details</a> Total destinations: {{ lst.total }}</li>
+                    <hr>
+                  </div>
+                  {% endfor %}
+		                  </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+{% endblock %}

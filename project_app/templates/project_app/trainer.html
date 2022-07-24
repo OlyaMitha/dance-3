@@ -1,0 +1,242 @@
+{% extends 'project_app/base.html' %}
+{% load static %}
+{% block screen %}
+<section class="hero-wrap js-fullheight" style="background-image: url('/static/project_app/images/bg_2.jpg')">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-start">
+          <div class="col-md-8 ftco-animate">
+            <h1 class="typewrite mb-3" data-period="4000" data-type='[ "Just dance!", "Time to be yourself and express yourself in dance"]'>
+              <span class="wrap"></span>
+            </h1>
+            <h2 class="mb-5">Just dance! Time to be yourself and express yourself in dance</h2>
+            <p><a href="#" class="btn btn-primary p-3 px-4">1 lesson in each direction for free</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+		<section class="ftco-section ftco-intro" style="background-image: url('/static/project_app/images/intro.jpg')">
+			<div class="container">
+				<div class="row justify-content-end">
+					<div class="col-md-6">
+
+	          <p class="ftco-animate"></p>
+	          <ul class="mt-5 do-list">
+				{% for el in data %}
+              <li class="ftco-animate"><a href="{% url 'based_lesson_trainer' el.id %}"><span class="ion-ios-checkmark-circle mr-3">   {{el.name}}</span></a></li>
+              {% endfor %}
+	          </ul>
+					</div>
+				</div>
+			</div>
+		</section>
+{% endblock %}
+
+
+
+{% block directions %}
+ <section class="ftco-section">
+	  	<div class="container">
+	  		<div class="row justify-content-center mb-5 pb-3">
+          <div class="col-md-12 heading-section ftco-animate text-center">
+            <h3 class="subheading">Dance directions</h3>
+            <h2 class="mb-1">Choose your direction of dance</h2>
+          </div>
+        </div>
+        <div class="row no-gutters">
+        	<div class="col-md-6 col-lg-4">
+        		<div class="package-program ftco-animate">
+        			<a href="#" class="img d-flex justify-content-center align-items-center" style="background-image: url('/static/project_app/images/program-1.jpg')">
+        				<div class="text p-5 text-center">
+	        				<h3>Eastern dance</h3>
+	        				<p>Описание</p>
+	        			</div>
+        			</a>
+        		</div>
+        	</div>
+        	<div class="col-md-6 col-lg-4">
+        		<div class="package-program ftco-animate">
+        			<a href="#" class="img d-flex justify-content-center align-items-center" style="background-image: url('/static/project_app/images/program-2.jpg')">
+        				<div class="text p-5 text-center">
+	        				<h3>Argentine tango</h3>
+	        				<p>Описание</p>
+	        			</div>
+        			</a>
+        		</div>
+        	</div>
+        	<div class="col-md-6 col-lg-4">
+        		<div class="package-program ftco-animate">
+        			<a href="#" class="img d-flex justify-content-center align-items-center" style="background-image: url('/static/project_app/images/program-3.jpg')"">
+        				<div class="text p-5 text-center">
+	        				<h3>Salsa</h3>
+	        				<p>Описание</p>
+	        			</div>
+        			</a>
+        		</div>
+        	</div>
+        	<div class="col-md-6 col-lg-4">
+        		<div class="package-program ftco-animate">
+        			<a href="#" class="img d-flex justify-content-center align-items-center" style="background-image: url('/static/project_app/images/program-4.jpg')">
+        				<div class="text p-5 text-center">
+	        				<h3>Ballroom dancing</h3>
+	        				<p>Описание</p>
+	        			</div>
+        			</a>
+        		</div>
+        	</div>
+        	<div class="col-md-6 col-lg-4">
+        		<div class="package-program ftco-animate">
+        			<a href="#" class="img d-flex justify-content-center align-items-center" style="background-image: url('/static/project_app/images/program-5.jpg')">
+        				<div class="text p-5 text-center">
+	        				<h3>Modern dances</h3>
+	        				<p>Описание</p>
+	        			</div>
+        			</a>
+        		</div>
+        	</div>
+        	<div class="col-md-6 col-lg-4">
+        		<div class="package-program ftco-animate">
+        			<a href="#" class="img d-flex justify-content-center align-items-center" style="background-image: url('/static/project_app/images/program-6.jpg')">
+        				<div class="text p-5 text-center">
+	        				<h3>Indian dances</h3>
+	        				<p>Описание</p>
+	        			</div>
+        			</a>
+        		</div>
+        	</div>
+        </div>
+	  	</div>
+	  </section>
+{% endblock %}
+
+
+
+{% block Stories %}
+<section class="ftco-section testimony-section">
+      <div class="container">
+        <div class="row justify-content-center mb-5 pb-3">
+          <div class="col-md-7 heading-section ftco-animate text-center">
+            <h3 class="subheading">Testimony</h3>
+            <h2 class="mb-1">Successful Stories</h2>
+          </div>
+        </div>
+        <div class="row ftco-animate">
+          <div class="col-md-12">
+            <div class="carousel-testimony owl-carousel">
+              <div class="item">
+                <div class="testimony-wrap p-4 pb-5">
+                  <div class="text">
+                  	<div class="line pl-5">
+	                    <p class="mb-4 pb-1">Great classes and great teachers</p>
+	                    <span class="quote d-flex align-items-center justify-content-center">
+	                      <i class="icon-quote-left"></i>
+	                    </span>
+	                  </div>
+                    <div class="d-flex align-items-center">
+                    	<div class="user-img" style="background-image: url('/static/project_app/images/person_1.jpg')">
+		                  </div>
+		                  <div class="ml-4">
+		                  	<p class="name">Gabby Smith</p>
+		                    <span class="position">Customer</span>
+		                  </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="testimony-wrap p-4 pb-5">
+                  <div class="text">
+                    <div class="line pl-5">
+	                    <p class="mb-4 pb-1">Great classes and great teachers</p>
+	                    <span class="quote d-flex align-items-center justify-content-center">
+	                      <i class="icon-quote-left"></i>
+	                    </span>
+	                  </div>
+
+                    <div class="d-flex align-items-center">
+                    	<div class="user-img" style="background-image: url('/static/project_app/images/person_2.jpg')">
+		                  </div>
+		                  <div class="ml-4">
+		                  	<p class="name">Floyd Weather</p>
+		                    <span class="position">Customer</span>
+		                  </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="testimony-wrap p-4 pb-5">
+                  <div class="text">
+                    <div class="line pl-5">
+	                    <p class="mb-4 pb-1">Great classes and great teachers</p>
+	                    <span class="quote d-flex align-items-center justify-content-center">
+	                      <i class="icon-quote-left"></i>
+	                    </span>
+	                  </div>
+
+                    <div class="d-flex align-items-center">
+                    	<div class="user-img" style="background-image: url('/static/project_app/images/person_3.jpg')">
+		                  </div>
+		                  <div class="ml-4">
+		                  	<p class="name">James Dee</p>
+		                    <span class="position">Customer</span>
+		                  </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="testimony-wrap p-4 pb-5">
+                  <div class="text">
+                    <div class="line pl-5">
+	                    <p class="mb-4 pb-1">Great classes and great teachers</p>
+	                    <span class="quote d-flex align-items-center justify-content-center">
+	                      <i class="icon-quote-left"></i>
+	                    </span>
+	                  </div>
+
+                    <div class="d-flex align-items-center">
+                    	<div class="user-img" style="background-image: url('/static/project_app/images/person_4.jpg')">
+		                  </div>
+		                  <div class="ml-4">
+		                  	<p class="name">Lance Roger</p>
+		                    <span class="position">Customer</span>
+		                  </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="testimony-wrap p-4 pb-5">
+                  <div class="text">
+                    <div class="line pl-5">
+	                    <p class="mb-4 pb-1">Great classes and great teachers</p>
+	                    <span class="quote d-flex align-items-center justify-content-center">
+	                      <i class="icon-quote-left"></i>
+	                    </span>
+	                  </div>
+
+                    <div class="d-flex align-items-center">
+                    	<div class="user-img" style="background-image: url('/static/project_app/images/person_2.jpg')">
+		                  </div>
+		                  <div class="ml-4">
+		                  	<p class="name">Kenny Bufer</p>
+		                    <span class="position">Customer</span>
+		                  </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+{% endblock %}
+
+
+
+
+
+

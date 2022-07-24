@@ -1,0 +1,63 @@
+{% extends 'project_app/base.html' %}
+{% load static %}
+
+{% block Stories %}
+<section class="ftco-section testimony-section">
+      <div class="container">
+        <div class="row justify-content-center mb-5 pb-3">
+          <div class="col-md-7 heading-section ftco-animate text-center">
+            <h3 class="subheading">
+			  {% for el in dance %}
+              <li class="ftco-animate"><a href="{% url 'based_name' el.id %}"><span class="ion-ios-checkmark-circle mr-3">   {{el.trainer}}</span></a></li>
+              {% endfor %}
+			</h3>
+            <h2 class="mb-1">Предложения</h2>
+          </div>
+        </div>
+        <div class="row ftco-animate">
+          <div class="col-md-12">
+            <div class="carousel-testimony owl-carousel">
+              <div class="item">
+                <div class="testimony-wrap p-4 pb-5">
+                  <div class="text">
+                  	<div class="line pl-5">
+	                    <p class="mb-4 pb-1">
+						</p>
+	                    <span class="quote d-flex align-items-center justify-content-center">
+	                      <i class="icon-quote-left"></i>
+	                    </span>
+	                  </div>
+                    <div class="d-flex align-items-center">
+                    	<div class="user-img" style="background-image: url('/static/project_app/images/person_1.jpg')">
+		                  </div>
+
+		                  <div class="ml-4">
+							  {% for les in data %}
+		                  	<p class="name">{{ les }}</p>
+		                    <span class="position">{{ les.direction }}</span>
+							  <span class="position">{{ les.subscription }}</span>
+							  <span class="position">{{ les.price }}</span>
+							  <img src="{{ les.image.url }}" class="gallery image-popup img d-flex align-items-center">
+							  <a href="{% url 'update_lesson' les.id %}"class="nav-link"> Edit</a></li>
+							  <a href="{% url 'delete_lesson' les.id %}"class="nav-link"> Delete</a></li>
+							  {% endfor %}
+		                  </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+{% endblock %}
+
+
+
+
+
+
+
+
